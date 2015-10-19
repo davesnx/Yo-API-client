@@ -1,0 +1,27 @@
+{
+  "name": "justyo-api-client-node",
+  "version": "0.0.1",
+  "description": "A JustYo API Client in nodejs",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node index.js",
+    "build": "babel index.js --optional runtime --out-file build/index.js",
+    "test": "mocha"
+  },
+  "keywords": [
+    "justyo",
+    "api",
+    "client"
+  ],
+  "author": "@davesnx",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davesnx/JustYo-API-client-node.js/issues"
+  },
+  "homepage": "https://github.com/davesnx/JustYo-API-client-node.js#readme",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-eslint": "^4.1.3",
+    "eslint": "^1.7.1"
+  }
+}
