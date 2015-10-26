@@ -4,16 +4,18 @@
   "description": "A JustYo API Client in nodejs",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node index.js",
-    "build": "babel index.js --optional runtime --out-file build/index.js",
-    "test": "mocha"
+    "start": "nodemon index.js --exec babel-node",
+    "build": "babel index.js -d dist --out-file lib/index.js",
+    "test": "./node_modules/.bin/mocha --compilers js:babel/register --recursive",
+    "test:watch": "./node_modules/.bin/mocha --compilers js:babel/register --recursive --watch"
   },
   "keywords": [
     "justyo",
     "api",
-    "client"
+    "client",
+    "node"
   ],
-  "author": "@davesnx",
+  "author": "davesnx <dsnxmoreno@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/davesnx/JustYo-API-client-node.js/issues"
@@ -22,6 +24,12 @@
   "devDependencies": {
     "babel": "^5.8.23",
     "babel-eslint": "^4.1.3",
-    "eslint": "^1.7.1"
+    "chai": "^3.4.0",
+    "eslint": "^1.7.1",
+    "mocha": "^1.20.1",
+    "nodemon": "^1.8.0"
+  },
+  "dependencies": {
+    "superagent": "^1.4.0"
   }
 }

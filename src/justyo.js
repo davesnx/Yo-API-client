@@ -1,3 +1,1 @@
-let x = 5;
-
-console.log(x);
+import Base from './api/common/Base';

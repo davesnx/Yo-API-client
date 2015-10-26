@@ -1,0 +1,9 @@
+docs
+test
+.editorconfig
+.gitignore
+.jscsrc
+.eslintrc
+.nodemonrc
+*.sublime-*
+/test/
