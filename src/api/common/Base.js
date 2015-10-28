@@ -2,8 +2,8 @@ import request from 'superagent';
 
 export default class Base {
 
-    constructor(justyo) {
-        return this.justyo;
+    constructor(yo) {
+        return this.yo;
     }
 
     throwError(err) {
@@ -16,9 +16,9 @@ export default class Base {
     }
 
     request(method = 'GET', url = '', params = {}, callback) {
-        params.auth_token = this.justyo.api_token;
+        params.auth_token = this.yo.api_token;
 
-        const xhr = request[method.toLowerCase()] + `${this.justyo.host}${url}`;
+        const xhr = request[method.toLowerCase()] + `${this.yo.host}${url}`;
 
         if (method === 'POST') {
             xhr.type('form');

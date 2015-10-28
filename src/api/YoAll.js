@@ -1,5 +1,8 @@
 import Base from 'common/Base.js';
 
+const method = 'POST';
+const REQUIRED_PARAMETERS = ['api_token'];
+
 export default class YoAll extends Base {
 
     constructor () {
@@ -8,9 +11,8 @@ export default class YoAll extends Base {
     }
 
     post (options, callback) {
-        const method = 'POST';
+        Validate.parameters(options, REQUIRED_PARAMETERS);
         request(method, this.endpoint, options, callback);
     }
 
 }
-

@@ -1,4 +1,4 @@
-import JustYo from '../src/justyo';
+import JustYo from '../src/JustYo';
 import { expect, assert } from 'chai';
 
 describe('JustYo', () => {
@@ -11,7 +11,7 @@ describe('JustYo', () => {
   });
 
   it(('should be an instance of JustYo class'), () => {
-    
+
   });
 
   afterEach(() => {

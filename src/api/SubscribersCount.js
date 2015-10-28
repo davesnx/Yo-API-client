@@ -1,17 +1,17 @@
 import Base from 'common/Base.js';
 import Validate from 'common/Validate.js';
 
-const method = 'POST';
-const REQUIRED_PARAMETERS = ['username', 'api_token'];
+const method = 'GET';
+const REQUIRED_PARAMETERS = ['api_token'];
 
-export default class Yo extends Base {
+export default class SubscribersCount extends Base {
 
     constructor () {
         super();
-        this.endpoint = '/yo';
+        this.endpoint = '/subscribers_count';
     }
 
-    post (options, callback) {
+    get (options, callback) {
         Validate.parameters(options, REQUIRED_PARAMETERS);
         request(method, this.endpoint, options, callback);
     }

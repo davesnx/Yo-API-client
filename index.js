@@ -1,2 +1,2 @@
 require('babel/register');
-require('./src/justyo.js');
+require('./src/JustYo');

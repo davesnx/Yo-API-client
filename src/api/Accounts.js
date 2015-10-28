@@ -2,13 +2,13 @@ import Base from 'common/Base.js';
 import Validate from 'common/Validate.js';
 
 const method = 'POST';
-const REQUIRED_PARAMETERS = ['username', 'api_token'];
+const REQUIRED_PARAMETERS = ['username'];
 
-export default class Yo extends Base {
+export default class Accounts extends Base {
 
     constructor () {
         super();
-        this.endpoint = '/yo';
+        this.endpoint = '/accounts';
     }
 
     post (options, callback) {
