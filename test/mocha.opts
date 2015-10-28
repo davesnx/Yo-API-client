@@ -1,3 +1,5 @@
 --require should
---reporter dot
+--reporter list
 --ui bdd
+--compilers js:babel/register
+--recursive

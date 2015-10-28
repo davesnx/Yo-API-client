@@ -1,5 +1,5 @@
 import Base from '../../../src/api/common/Base';
-import sinon from 'sinon';
+import should from 'should';
 
 describe('Base', () => {
 

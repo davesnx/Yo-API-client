@@ -6,8 +6,8 @@
   "scripts": {
     "start": "nodemon index.js --exec babel-node",
     "build": "babel index.js -d dist --out-file lib/index.js",
-    "test": "./node_modules/.bin/mocha --compilers js:babel/register --recursive",
-    "test:watch": "./node_modules/.bin/mocha --compilers js:babel/register --recursive --watch"
+    "test": "./node_modules/.bin/mocha",
+    "test:watch": "./node_modules/.bin/mocha --watch"
   },
   "keywords": [
     "justyo",
@@ -27,7 +27,8 @@
     "chai": "^3.4.0",
     "eslint": "^1.7.1",
     "mocha": "^1.20.1",
-    "nodemon": "^1.8.0"
+    "nodemon": "^1.8.0",
+    "should": "^7.1.1"
   },
   "dependencies": {
     "superagent": "^1.4.0"
