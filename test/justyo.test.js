@@ -11,7 +11,7 @@ describe('JustYo', () => {
   });
 
   it(('should be an instance of JustYo class'), () => {
-
+    
   });
 
   afterEach(() => {
