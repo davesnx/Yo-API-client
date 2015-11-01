@@ -11,27 +11,23 @@ describe('Valid', () => {
     beforeEach(() => {
         VALID_PARAMS = ['api_token', 'username'];
         BAD_OPTIONS = {api_token:'a', lola:'c'};
-        GOOD_OPTIONS = {api_token:'1', username:'2'};
+        GOOD_OPTIONS = {api_token:'3495', username:'davesnx'};
     });
 
     it('true should be true', function() {
         true.should.be.a.Boolean;
         should('abc').be.a.String();
-        console.log("");
-        // Valid.parameters(BAD_OPTIONS, VALID_PARAMS);
-        console.log("");
-        console.log(Valid.parameters(GOOD_OPTIONS, VALID_PARAMS));
     });
 
     describe('#parameters', () => {
-        describe('if the params not match with the options', () => {
-            it('should throw an error', () => {
-                //assert.throws(Valid.parameters(BAD_OPTIONS, VALID_PARAMS), Error, /^Missing/);
-            });
-        });
         describe('if the params match with the options', () => {
             it('should be true', () => {
-                //should(Valid.parameters(GOOD_OPTIONS, VALID_PARAMS)).be.true;
+                should(Valid.parameters(GOOD_OPTIONS, VALID_PARAMS)).be.true;
+            });
+        });
+        describe('if the params not match with the options', () => {
+            it('should throw an error', () => {
+                Valid.parameters.bind(null, BAD_OPTIONS, VALID_PARAMS).should.throw();
             });
         });
     });
@@ -39,12 +35,12 @@ describe('Valid', () => {
     describe('#isString', () => {
         describe('if the param is a String', () => {
             it('should not throw an TypeError', () => {
-                //assert.doesNotThrow(Valid.isString('lola'), TypeError);
+                should(Valid.isString('lola')).be.true;
             });
         });
         describe('if the param isn\'t a String', () => {
             it('should throw an TypeError', () => {
-                //assert.throw(Valid.isString(2), TypeError);
+                Valid.isString.bind(null, 2).should.throw();
             });
         });
     });
@@ -52,12 +48,12 @@ describe('Valid', () => {
     describe('#isNumber', () => {
         describe('if the param is a Number', () => {
             it('should not throw an TypeError', () => {
-                //assert.doesNotThrow(Valid.isNumber(1), TypeError);
+                should(Valid.isNumber(1)).be.true;
             });
         });
         describe('if the param isn\'t a Number', () => {
             it('should throw an TypeError', () => {
-                //assert.throw(Valid.isNumber('2'), TypeError);
+                Valid.isNumber.bind(null, 'lola').should.throw();
             });
         });
     });

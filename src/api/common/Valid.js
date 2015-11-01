@@ -3,9 +3,7 @@ import _ from 'lodash';
 export default class Valid {
 
     static parameters (options = {}, validation = []) {
-        return _.each(validation, function(val) {
-            console.log(val);
-            console.log(options[val]);
+        _.each(validation, function(val, i) {
             if (!options[val]) {
                 throw new Error(`Missing ${val} parameter`);
             }
@@ -13,8 +11,6 @@ export default class Valid {
     }
 
     static isString (param = '') {
-        console.log(typeof param);
-        console.log(_.isString(param));
         if (!_.isString(param)) {
             throw new TypeError(`${param} should be a string`);
         }

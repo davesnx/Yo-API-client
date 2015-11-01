@@ -8,7 +8,6 @@ describe('Base', () => {
     let justyo;
 
     beforeEach(() => {
-        //justyo = new JustYo();
         base = new Base();
     });
 
