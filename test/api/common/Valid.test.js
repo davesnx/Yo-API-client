@@ -9,14 +9,18 @@ describe('Valid', () => {
     let GOOD_OPTIONS;
 
     beforeEach(() => {
-        VALID_PARAMS = ['a', 'b'];
-        BAD_OPTIONS = {a:'a', c:'c'};
-        GOOD_OPTIONS = {a:'1', b:'2'};
+        VALID_PARAMS = ['api_token', 'username'];
+        BAD_OPTIONS = {api_token:'a', lola:'c'};
+        GOOD_OPTIONS = {api_token:'1', username:'2'};
     });
 
     it('true should be true', function() {
         true.should.be.a.Boolean;
         should('abc').be.a.String();
+        console.log("");
+        // Valid.parameters(BAD_OPTIONS, VALID_PARAMS);
+        console.log("");
+        console.log(Valid.parameters(GOOD_OPTIONS, VALID_PARAMS));
     });
 
     describe('#parameters', () => {
