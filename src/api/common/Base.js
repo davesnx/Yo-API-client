@@ -15,30 +15,28 @@ export default class Base {
         return new Error(`${code} (${type}) - ${message}`);
     }
 
-    request(method = 'GET', url = '', params = {}) {
-        return new Promise((resolve, reject) => {
-            params.auth_token = this.yo.api_token;
+    request(method = 'GET', url = '', params = {}, callback) {
+        params.auth_token = this.yo.apiToken;
 
-            const xhr = request[method.toLowerCase()] + `${this.yo.host}${url}`;
+        const xhr = request[method.toLowerCase()] + `${this.yo.host}${url}`;
 
-            if (method === 'POST') {
-                xhr.type('form');
-                xhr.send(params);
-            } else {
-                xhr.query(params);
+        if (method === 'POST') {
+            xhr.type('form');
+            xhr.send(params);
+        } else {
+            xhr.query(params);
+        }
+
+        xhr.end((err, res) => {
+            if (err) {
+                throw err;
             }
-
-            xhr.end((err, res) => {
-                if (err) {
-                    throw err;
-                }
-                if (res.ok) {
-                    resolve(null, res.body);
-                } else {
-                    reject(this.throwError(res.body));
-                }
-            });
-        })
+            if (res.ok) {
+                callback(null, res.body);
+            } else {
+                callback(this.throwError(res.body));
+            }
+        });
     }
 
 }

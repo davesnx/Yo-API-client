@@ -2,7 +2,10 @@ import _ from 'lodash';
 
 export default class Valid {
 
-    static parameters (options = {}, validation = []) {
+    static parameters (options, validation = [], requiredOptions = false) {
+        if (requiredOptions && !options) {
+            throw new Error(`Impossible do the request without parameters`);
+        }
         _.each(validation, function(val, i) {
             if (!options[val]) {
                 throw new Error(`Missing ${val} parameter`);

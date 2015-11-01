@@ -1,5 +1,5 @@
-import Base from 'common/Base.js';
-import Validate from 'common/Validate.js';
+import Base from './common/Base.js';
+import Valid from './common/Valid.js';
 
 const method = 'GET';
 const REQUIRED_PARAMETERS = ['api_token', 'username'];
@@ -12,8 +12,8 @@ export default class CheckUsername extends Base {
     }
 
     get (options, callback) {
-        Validate.parameters(options, REQUIRED_PARAMETERS);
-        request(method, this.endpoint, options, callback);
+        Valid.parameters(options, REQUIRED_PARAMETERS, true);
+        super.request(method, this.endpoint, options, callback);
     }
 
 }
