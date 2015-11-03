@@ -6,14 +6,14 @@ const REQUIRED_PARAMETERS = ['api_token'];
 
 export default class YoAll extends Base {
 
-    constructor () {
-        super();
-        this.endpoint = '/yoall'
+    constructor(apiToken) {
+        super(apiToken);
+        this.endpoint = 'yoall';
     }
 
-    post (options, callback) {
+    post(options) {
         Valid.parameters(options, REQUIRED_PARAMETERS, true);
-        super.request(method, this.endpoint, options, callback);
+        return super.request(method, this.endpoint, options);
     }
 
 }

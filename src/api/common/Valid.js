@@ -2,8 +2,8 @@ import _ from 'lodash';
 
 export default class Valid {
 
-    static parameters (options, validation = [], requiredOptions = false) {
-        if (requiredOptions && !options) {
+    static parameters(options, validation = [], requiredOptions = false) {
+        if (!options && requiredOptions) {
             throw new Error(`Impossible do the request without parameters`);
         }
         _.each(validation, function(val, i) {
@@ -13,13 +13,13 @@ export default class Valid {
         })
     }
 
-    static isString (param = '') {
+    static isString(param = '') {
         if (!_.isString(param)) {
             throw new TypeError(`${param} should be a string`);
         }
     }
 
-    static isNumber (param) {
+    static isNumber(param) {
         if (!_.isNumber(param)) {
             throw new TypeError(`${param} should be a number`);
         }

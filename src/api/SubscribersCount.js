@@ -6,14 +6,14 @@ const REQUIRED_PARAMETERS = ['api_token'];
 
 export default class SubscribersCount extends Base {
 
-    constructor () {
-        super();
-        this.endpoint = '/subscribers_count';
+    constructor(apiToken) {
+        super(apiToken);
+        this.endpoint = 'subscribers_count';
     }
 
-    get (options, callback) {
+    get(options) {
         Valid.parameters(options, REQUIRED_PARAMETERS, true);
-        super.request(method, this.endpoint, options, callback);
+        return super.request(method, this.endpoint, options);
     }
 
 }

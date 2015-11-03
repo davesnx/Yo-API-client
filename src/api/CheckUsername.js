@@ -6,14 +6,14 @@ const REQUIRED_PARAMETERS = ['api_token', 'username'];
 
 export default class CheckUsername extends Base {
 
-    constructor () {
-        super();
-        this.endpoint = '/check_username';
+    constructor(apiToken) {
+        super(apiToken);
+        this.endpoint = 'check_username';
     }
 
-    get (options, callback) {
+    get(options) {
         Valid.parameters(options, REQUIRED_PARAMETERS, true);
-        super.request(method, this.endpoint, options, callback);
+        return super.request(method, this.endpoint, options);
     }
 
 }

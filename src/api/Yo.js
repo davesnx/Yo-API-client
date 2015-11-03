@@ -6,14 +6,14 @@ const REQUIRED_PARAMETERS = ['username', 'api_token'];
 
 export default class Yo extends Base {
 
-    constructor () {
-        super();
-        this.endpoint = '/yo';
+    constructor(apiToken) {
+        super(apiToken);
+        this.endpoint = 'yo';
     }
 
-    post (options, callback) {
+    post(options) {
         Valid.parameters(options, REQUIRED_PARAMETERS, true);
-        super.request(method, this.endpoint, options, callback);
+        return super.request(method, this.endpoint, options);
     }
 
 }

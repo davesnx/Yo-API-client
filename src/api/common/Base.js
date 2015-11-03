@@ -1,9 +1,9 @@
-import request from 'superagent';
+import request from 'request-promise';
 
 export default class Base {
 
     constructor(yo) {
-        return this.yo;
+        this.yo = yo;
     }
 
     throwError(err) {
@@ -15,11 +15,44 @@ export default class Base {
         return new Error(`${code} (${type}) - ${message}`);
     }
 
-    request(method = 'GET', url = '', params = {}, callback) {
+    request(method = 'GET', url = '', params = {}) {
+        return new Promise(
+            (resolve, reject) => {
+
+                let options = {
+                    method: method,
+                    uri: `${this.yo.url}${url}`,
+                    json: true
+                };
+
+                switch (method) {
+                    case 'GET':
+                        options.qs = {
+                            username: params.username,
+                            api_token: this.yo.apiToken
+                        };
+                    break;
+
+                    case 'POST':
+                        options.body = params;
+                    break;
+                }
+
+                request(options)
+                    .then(function(res) {
+                        resolve(null, res.body)
+                    })
+                    .catch(function(err) {
+                        reject(this.throwError(err));
+                    });
+            }
+        )
+
+        /*
         params.auth_token = this.yo.apiToken;
 
-        const xhr = request[method.toLowerCase()] + `${this.yo.host}${url}`;
-
+        const xhr = request[method.toLowerCase()] + `${this.yo.url}${url}`;
+        console.log(xhr);
         if (method === 'POST') {
             xhr.type('form');
             xhr.send(params);
@@ -36,7 +69,7 @@ export default class Base {
             } else {
                 callback(this.throwError(res.body));
             }
-        });
+        }); */
     }
 
 }

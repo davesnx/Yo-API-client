@@ -6,7 +6,7 @@ import YoAll from './api/YoAll';
 
 class JustYo {
 
-    constructor (apiToken) {
+    constructor(apiToken) {
         this.url = 'https://api.justyo.co/';
         this.apiToken = apiToken;
         this.addEndpoints({
@@ -18,10 +18,9 @@ class JustYo {
         })
     }
 
-    addEndpoints (endpoints) {
+    addEndpoints(endpoints) {
         for (let name in endpoints) {
-            let end = endpoints[name];
-            this[name] = new end;
+            this[name] = new endpoints[name](this);
         }
     }
 
