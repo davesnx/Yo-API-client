@@ -16,12 +16,13 @@ export default class Base {
     }
 
     request(method = 'GET', url = '', params = {}) {
+        let self = this;
         return new Promise(
             (resolve, reject) => {
 
                 let options = {
                     method: method,
-                    uri: `${this.yo.url}${url}`,
+                    uri: `${self.yo.url}${url}`,
                     json: true
                 };
 
@@ -29,47 +30,24 @@ export default class Base {
                     case 'GET':
                         options.qs = {
                             username: params.username,
-                            api_token: this.yo.apiToken
+                            api_token: self.yo.apiToken
                         };
                     break;
 
                     case 'POST':
                         options.body = params;
                     break;
-                }
+                };
 
                 request(options)
                     .then(function(res) {
                         resolve(null, res.body)
                     })
                     .catch(function(err) {
-                        reject(this.throwError(err));
+                        reject(self.throwError(err));
                     });
             }
         )
-
-        /*
-        params.auth_token = this.yo.apiToken;
-
-        const xhr = request[method.toLowerCase()] + `${this.yo.url}${url}`;
-        console.log(xhr);
-        if (method === 'POST') {
-            xhr.type('form');
-            xhr.send(params);
-        } else {
-            xhr.query(params);
-        }
-
-        xhr.end((err, res) => {
-            if (err) {
-                throw err;
-            }
-            if (res.ok) {
-                callback(null, res.body);
-            } else {
-                callback(this.throwError(res.body));
-            }
-        }); */
     }
 
 }

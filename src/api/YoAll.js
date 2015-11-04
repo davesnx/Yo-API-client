@@ -2,7 +2,7 @@ import Base from './common/Base.js';
 import Valid from './common/Valid.js';
 
 const method = 'POST';
-const REQUIRED_PARAMETERS = ['api_token'];
+const REQUIRED_PARAMETERS = [];
 
 export default class YoAll extends Base {
 

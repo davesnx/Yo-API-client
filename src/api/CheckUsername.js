@@ -2,7 +2,7 @@ import Base from './common/Base.js';
 import Valid from './common/Valid.js';
 
 const method = 'GET';
-const REQUIRED_PARAMETERS = ['api_token', 'username'];
+const REQUIRED_PARAMETERS = ['username'];
 
 export default class CheckUsername extends Base {
 

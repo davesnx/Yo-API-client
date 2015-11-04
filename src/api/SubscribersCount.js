@@ -2,7 +2,7 @@ import Base from './common/Base.js';
 import Valid from './common/Valid.js';
 
 const method = 'GET';
-const REQUIRED_PARAMETERS = ['api_token'];
+const REQUIRED_PARAMETERS = [];
 
 export default class SubscribersCount extends Base {
 
