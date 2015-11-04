@@ -1,4 +1,3 @@
-import JustYo from '../../../src/JustYo';
 import Base from '../../../src/api/common/Base';
 import should from 'should';
 
