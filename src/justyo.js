@@ -27,6 +27,12 @@ class JustYo {
 }
 
 let yo = new JustYo("a1b650c9-ec43-4eff-90ca-51a4937b2407");
-yo.accounts.post({
+
+yo.check_username.get({
     'username': 'davesnx'
+}).then(function(body) {
+    console.log("THEN?");
+    console.log(body);
+}).catch(function(err) {
+    console.log(err)
 });

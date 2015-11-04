@@ -24,24 +24,24 @@ export default class Base {
                     method: method,
                     uri: `${self.yo.url}${url}`,
                     json: true
-                };
+                }
 
                 switch (method) {
                     case 'GET':
                         options.qs = {
                             username: params.username,
                             api_token: self.yo.apiToken
-                        };
+                        }
                     break;
 
                     case 'POST':
                         options.body = params;
                     break;
-                };
+                }
 
                 request(options)
                     .then(function(res) {
-                        resolve(null, res.body)
+                        resolve(res);
                     })
                     .catch(function(err) {
                         reject(self.throwError(err));
