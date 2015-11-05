@@ -11,9 +11,9 @@ export default class SubscribersCount extends Base {
         this.endpoint = 'subscribers_count';
     }
 
-    get(options) {
-        Valid.parameters(options, REQUIRED_PARAMETERS, true);
-        return super.request(method, this.endpoint, options);
+    get(parameters) {
+        Valid.parameters(parameters, REQUIRED_PARAMETERS, true);
+        return super.request(method, this.endpoint, parameters);
     }
 
 }

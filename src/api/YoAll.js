@@ -11,9 +11,9 @@ export default class YoAll extends Base {
         this.endpoint = 'yoall';
     }
 
-    post(options) {
-        Valid.parameters(options, REQUIRED_PARAMETERS, true);
-        return super.request(method, this.endpoint, options);
+    post(parameters) {
+        Valid.parameters(parameters, REQUIRED_PARAMETERS, true);
+        return super.request(method, this.endpoint, parameters);
     }
 
 }

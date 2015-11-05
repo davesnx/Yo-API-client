@@ -11,9 +11,9 @@ export default class CheckUsername extends Base {
         this.endpoint = 'check_username';
     }
 
-    get(options) {
-        Valid.parameters(options, REQUIRED_PARAMETERS, true);
-        return super.request(method, this.endpoint, options);
+    get(parameters) {
+        Valid.parameters(parameters, REQUIRED_PARAMETERS, true);
+        return super.request(method, this.endpoint, parameters);
     }
 
 }

@@ -11,9 +11,9 @@ export default class Yo extends Base {
         this.endpoint = 'yo';
     }
 
-    post(options) {
-        Valid.parameters(options, REQUIRED_PARAMETERS, true);
-        return super.request(method, this.endpoint, options);
+    post(parameters) {
+        Valid.parameters(parameters, REQUIRED_PARAMETERS, true);
+        return super.request(method, this.endpoint, parameters);
     }
 
 }

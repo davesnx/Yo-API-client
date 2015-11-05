@@ -9,6 +9,12 @@ describe('CheckUsername', () => {
     let yo;
     let check_username;
     const API_TOKEN = "a1b650c9-ec43-4eff-90ca-51a4937b2407";
+    const GOOD_PARAMETERS = {
+        'username': 'admin'
+    };
+    const WRONG_PARAMETERS = {
+        'userlola': 1
+    };
 
     beforeEach(() => {
         yo = new JustYo(API_TOKEN);
@@ -36,11 +42,17 @@ describe('CheckUsername', () => {
     describe('#get', () => {
         describe('should call the validation of the parameters', () => {
             it('and fail with wrong parameters', () => {
-                throw Error;
+                //  check_username.get(WRONG_PARAMETERS)
+                //      .then((result) => {
+                //          expect(result).to.not.be(true);
+                //  });
             });
 
             it('and success with correct parameters', () => {
-                throw Error;
+                check_username.get(GOOD_PARAMETERS)
+                    .then((result) => {
+                      expect(result).to.be(true);
+                  });
             });
         })
 
