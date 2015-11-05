@@ -1,5 +1,5 @@
 import Valid from '../../../src/api/common/Valid';
-import { assert } from 'chai';
+import { assert, expect } from 'chai';
 import should from 'should';
 
 describe('Valid', () => {

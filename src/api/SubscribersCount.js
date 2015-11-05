@@ -6,8 +6,8 @@ const REQUIRED_PARAMETERS = [];
 
 export default class SubscribersCount extends Base {
 
-    constructor(apiToken) {
-        super(apiToken);
+    constructor() {
+        super();
         this.endpoint = 'subscribers_count';
     }
 

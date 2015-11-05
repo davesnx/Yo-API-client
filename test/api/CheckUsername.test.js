@@ -2,6 +2,7 @@ import JustYo from '../../src/JustYo.js';
 import CheckUsername from '../../src/api/CheckUsername';
 import Base from '../../src/api/common/Base';
 import should from 'should';
+import { assert, expect } from 'chai';
 
 describe('CheckUsername', () => {
 
@@ -11,7 +12,7 @@ describe('CheckUsername', () => {
 
     beforeEach(() => {
         yo = new JustYo(API_TOKEN);
-        check_username = new CheckUsername(API_TOKEN);
+        check_username = new CheckUsername();
     });
 
     afterEach(() => {
@@ -28,9 +29,7 @@ describe('CheckUsername', () => {
         });
 
         it('should recive CheckUsername endpoint', () => {
-            // the same as yo.check_username:
-            // (check_username).should.be.exactly(yo.check_username);
-            throw Error;
+            (check_username).should.eql(yo.check_username);
         });
     });
 

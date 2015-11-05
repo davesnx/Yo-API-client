@@ -2,9 +2,7 @@ import request from 'request-promise';
 
 export default class Base {
 
-    constructor(yo) {
-        this.yo = yo;
-    }
+    constructor() {}
 
     throwError(err) {
         const error = err.error;

@@ -6,8 +6,8 @@ const REQUIRED_PARAMETERS = ['username'];
 
 export default class Accounts extends Base {
 
-    constructor(apiToken) {
-        super(apiToken);
+    constructor() {
+        super();
         this.endpoint = 'accounts';
     }
 

@@ -6,8 +6,8 @@ const REQUIRED_PARAMETERS = [];
 
 export default class YoAll extends Base {
 
-    constructor(apiToken) {
-        super(apiToken);
+    constructor() {
+        super();
         this.endpoint = 'yoall';
     }
 
