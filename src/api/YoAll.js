@@ -6,8 +6,8 @@ const REQUIRED_PARAMETERS = [];
 
 export default class YoAll extends Base {
 
-    constructor() {
-        super();
+    constructor(yo) {
+        super(yo);
         this.endpoint = 'yoall';
     }
 

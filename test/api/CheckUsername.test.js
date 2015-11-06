@@ -3,6 +3,8 @@ import CheckUsername from '../../src/api/CheckUsername';
 import Base from '../../src/api/common/Base';
 import should from 'should';
 import { assert, expect } from 'chai';
+// import { assert, expect } from 'chai-as-promised';
+import fixtures from './common/fixtures/fixture'
 
 describe('CheckUsername', () => {
 
@@ -18,7 +20,7 @@ describe('CheckUsername', () => {
 
     beforeEach(() => {
         yo = new JustYo(API_TOKEN);
-        check_username = new CheckUsername();
+        check_username = new CheckUsername(yo);
     });
 
     afterEach(() => {
@@ -54,7 +56,7 @@ describe('CheckUsername', () => {
                       expect(result).to.be(true);
                   });
             });
-        })
+        });
 
         describe('should call the request', () => {
             it('and fail with wrong request', () => {
@@ -68,7 +70,7 @@ describe('CheckUsername', () => {
             it('and catch with good request', () => {
                 throw Error;
             });
-        })
-    })
+        });
+    });
 
 });

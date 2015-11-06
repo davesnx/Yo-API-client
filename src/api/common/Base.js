@@ -2,7 +2,9 @@ import request from 'request-promise';
 
 export default class Base {
 
-    constructor() {}
+    constructor(yo) {
+        this.yo = yo;
+    }
 
     throwError(err) {
         const error = err.error;
@@ -14,38 +16,26 @@ export default class Base {
     }
 
     request(method = 'GET', url = '', params = {}) {
-        let self = this;
-        return new Promise(
-            (resolve, reject) => {
+        const options = {
+            method: method,
+            uri: `${this.yo.url}${url}`,
+            json: true
+        }
 
-                let options = {
-                    method: method,
-                    uri: `${self.yo.url}${url}`,
-                    json: true
+        switch (method) {
+            case 'GET':
+                options.qs = {
+                    username: params.username,
+                    api_token: params.apiToken
                 }
+            break;
 
-                switch (method) {
-                    case 'GET':
-                        options.qs = {
-                            username: params.username,
-                            api_token: self.yo.apiToken
-                        }
-                    break;
+            case 'POST':
+                options.body = params;
+            break;
+        }
 
-                    case 'POST':
-                        options.body = params;
-                    break;
-                }
-
-                request(options)
-                    .then(function(res) {
-                        resolve(res);
-                    })
-                    .catch(function(err) {
-                        reject(self.throwError(err));
-                    });
-            }
-        )
+        return request(options);
     }
 
 }
