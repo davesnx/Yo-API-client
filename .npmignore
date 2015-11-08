@@ -2,6 +2,7 @@ docs
 test
 .editorconfig
 .gitignore
+.git
 .jscsrc
 .eslintrc
 .nodemonrc
