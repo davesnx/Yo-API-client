@@ -26,11 +26,11 @@ yo.yo.post({
 
 ## Endpoints
 
-- accounts
-- check_username
-- yo
-- yo_all
-- subscribers_count
+- `accounts`
+- `check_username`
+- `yo`
+- `yo_all`
+- `subscribers_count`
 
 ## API and documentation
 
