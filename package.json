@@ -1,6 +1,6 @@
 {
   "name": "justyo-api-client-node",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A JustYo API Client in nodejs",
   "main": "index.js",
   "scripts": {
