@@ -12,7 +12,6 @@ export default class SubscribersCount extends Base {
     }
 
     get(parameters) {
-        Valid.parameters(parameters, REQUIRED_PARAMETERS, true);
         return super.request(method, this.endpoint, parameters);
     }
 

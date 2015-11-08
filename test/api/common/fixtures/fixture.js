@@ -1,9 +1,9 @@
-export default fixtures = {
-    
+export default {
+
     CheckUsername: {
         "exists": true
     },
-    
+
     SubscribersCount: {
         "exists": true
     },

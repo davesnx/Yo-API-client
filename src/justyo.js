@@ -26,6 +26,8 @@ export default class JustYo {
 
 }
 
+/*
+
 let yo = new JustYo("a1b650c9-ec43-4eff-90ca-51a4937b2407");
 
 yo.check_username.get({
@@ -35,4 +37,4 @@ yo.check_username.get({
     console.log(body);
 }).catch(function(err) {
     console.log(err);
-});
+}); */

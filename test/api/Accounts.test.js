@@ -1,15 +1,15 @@
 import JustYo from '../../src/JustYo.js';
-import CheckUsername from '../../src/api/CheckUsername';
+import Accounts from '../../src/api/Accounts';
 import Base from '../../src/api/common/Base';
 import should from 'should';
 import { assert, expect } from 'chai';
 
 import fixtures from './common/fixtures/fixture'
 
-describe('CheckUsername', () => {
+describe('Accounts', () => {
 
     let yo;
-    let check_username;
+    let accounts;
     const API_TOKEN = "a1b650c9-ec43-4eff-90ca-51a4937b2407";
     const GOOD_PARAMETERS = {
         'username': 'admin'
@@ -20,7 +20,7 @@ describe('CheckUsername', () => {
 
     beforeEach(() => {
         yo = new JustYo(API_TOKEN);
-        check_username = new CheckUsername(yo);
+        accounts = new Accounts(yo);
     });
 
     afterEach(() => {
@@ -28,31 +28,31 @@ describe('CheckUsername', () => {
     });
 
     describe('#constructor', () => {
-        it('should be a CheckUsername instance', () => {
-            (check_username instanceof CheckUsername).should.be.exactly(true);
+        it('should be a Accounts instance', () => {
+            (accounts instanceof Accounts).should.be.exactly(true);
         });
 
         it('should be a child of Base', () => {
-            (check_username instanceof Base).should.be.exactly(true);
+            (accounts instanceof Base).should.be.exactly(true);
         });
 
-        it('should recive CheckUsername endpoint', () => {
-            (check_username).should.eql(yo.check_username);
+        it('should recive Accounts endpoint', () => {
+            (accounts).should.eql(yo.accounts);
         });
     });
 
-    describe('#get', () => {
+    describe('#post', () => {
         describe('should call the validation of the parameters', () => {
             it('and fail with wrong parameters', () => {
-                expect(() => {
-                  check_username.get(WRONG_PARAMETERS);
-                }).to.throw(Error);
+                // expect(() => {
+                //  accounts.post(WRONG_PARAMETERS);
+                // }).to.throw(Error);
             });
 
             it('and success with correct parameters', () => {
-                check_username.get(GOOD_PARAMETERS).then((result) => {
-                    (result).should.eql(fixtures.CheckUsername);
-                });
+                // accounts.post(GOOD_PARAMETERS).then((result) => {
+                //    (result).should.eql(fixtures.Accounts);
+                // });
             });
         });
     });
