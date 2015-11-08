@@ -6,11 +6,12 @@ export default class Valid {
         if (!options && requiredOptions) {
             throw new Error(`Impossible do the request without parameters`);
         }
-        _.each(validation, function(val) {
+
+        for(let val of validation) {
             if (!options[val]) {
                 throw new Error(`Missing ${val} parameter`);
             }
-        });
+        }
     }
 
     static isString(param = '') {
