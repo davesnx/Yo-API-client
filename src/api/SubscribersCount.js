@@ -1,19 +1,21 @@
-import Base from './common/Base.js';
-import Valid from './common/Valid.js';
+import Base from './common/Base.js'
+import Valid from './common/Valid.js'
 
-const method = 'GET';
-const REQUIRED_PARAMETERS = [];
+const method = 'GET'
+const REQUIRED_PARAMETERS = []
 
-export default class SubscribersCount extends Base {
+class SubscribersCount extends Base {
 
-    constructor(yo) {
-        super(yo);
-        this.endpoint = 'subscribers_count';
-    }
+  constructor (yo) {
+    super(yo)
+    this.endpoint = 'subscribers_count'
+  }
 
-    get(parameters) {
-        Valid.parameters(parameters, REQUIRED_PARAMETERS, true);
-        return super.request(method, this.endpoint, parameters);
-    }
+  get (parameters) {
+    Valid.parameters(parameters, REQUIRED_PARAMETERS, true)
+    return super.request(method, this.endpoint, parameters)
+  }
 
 }
+
+export default SubscribersCount

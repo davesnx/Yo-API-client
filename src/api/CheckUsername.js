@@ -1,19 +1,19 @@
-import Base from './common/Base.js';
-import Valid from './common/Valid.js';
+import Base from './common/Base.js'
+import Valid from './common/Valid.js'
 
-const method = 'GET';
-const REQUIRED_PARAMETERS = ['username'];
+const method = 'GET'
+const REQUIRED_PARAMETERS = ['username']
 
 export default class CheckUsername extends Base {
 
-    constructor(yo) {
-        super(yo);
-        this.endpoint = 'check_username';
-    }
+  constructor (yo) {
+    super(yo)
+    this.endpoint = 'check_username'
+  }
 
-    get(parameters) {
-        Valid.parameters(parameters, REQUIRED_PARAMETERS, true);
-        return super.request(method, this.endpoint, parameters);
-    }
+  get (parameters) {
+    Valid.parameters(parameters, REQUIRED_PARAMETERS, true)
+    return super.request(method, this.endpoint, parameters)
+  }
 
 }

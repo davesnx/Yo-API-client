@@ -1,19 +1,21 @@
-import Base from './common/Base.js';
-import Valid from './common/Valid.js';
+import Base from './common/Base.js'
+import Valid from './common/Valid.js'
 
-const method = 'POST';
-const REQUIRED_PARAMETERS = ['username'];
+const method = 'POST'
+const REQUIRED_PARAMETERS = ['username']
 
-export default class Accounts extends Base {
+class Accounts extends Base {
 
-    constructor(yo) {
-        super(yo);
-        this.endpoint = 'accounts';
-    }
+  constructor (yo) {
+    super(yo)
+    this.endpoint = 'accounts'
+  }
 
-    post(parameters) {
-        Valid.parameters(parameters, REQUIRED_PARAMETERS, true);
-        return super.request(method, this.endpoint, parameters);
-    }
+  post (parameters) {
+    Valid.parameters(parameters, REQUIRED_PARAMETERS, true)
+    return super.request(method, this.endpoint, parameters)
+  }
 
 }
+
+export default Accounts
