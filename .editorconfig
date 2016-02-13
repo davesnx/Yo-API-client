@@ -13,12 +13,12 @@ insert_final_newline = true
 [*.js]
 charset = utf-8
 indent_style = space
-indent_size = 4
+indent_size = 2
 
 # Indentation override for all JS under lib directory
 [lib/**.js]
 indent_style = space
-indent_size = 4
+indent_size = 2
 
 # Matches the exact files either package.json or .travis.yml
 [{package.json, .eslintrc, .travis.yml}]
