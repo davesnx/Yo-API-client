@@ -1,11 +1,11 @@
 ### Install
 ```sh
-npm install justyo-api-client-node --save
+npm install yo-api-client --save
 ```
 
 ### Usage
 ```js
-import Yo from 'justyo-api-client-node'
+import Yo from 'yo-api-client'
 const yo = new Yo('API_KEY')
 ```
 
