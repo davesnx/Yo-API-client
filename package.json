@@ -1,11 +1,10 @@
 {
   "name": "justyo-api-client-node",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A JustYo API Client in nodejs",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js --exec babel-node",
-    "build": "babel index.js -d dist --out-file lib/index.js",
     "test": "./node_modules/.bin/mocha --watch"
   },
   "keywords": [
